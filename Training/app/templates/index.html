@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Play & Learn - Audio Library</title>
+</head>
+
+<body>
+    <h1>Audio {{ index + 1 }} / {{ total }}</h1>
+    <strong>{{ audio }}</strong><br />
+    <audio controls>
+        <source src="{{ url_for('serve_audio', filename=audio) }}" type="audio/mpeg" />
+        Votre navigateur ne supporte pas la balise audio.
+    </audio>
+
+    <form method="POST" action="{{ url_for('save_metadata') }}">
+        <input type="hidden" name="file" value="{{ audio }}" />
+        <input type="hidden" name="index" value="{{ index }}" />
+
+        <label>Genre:
+            <select name="genre" required>
+                <option value="">--Choisir--</option>
+                <option value="rock" {% if meta.genre=='rock' %}selected{% endif %}>Rock</option>
+                <option value="pop" {% if meta.genre=='pop' %}selected{% endif %}>Pop</option>
+                <option value="jazz" {% if meta.genre=='jazz' %}selected{% endif %}>Jazz</option>
+                <option value="classical" {% if meta.genre=='classical' %}selected{% endif %}>Classique</option>
+                <option value="ambient" {% if meta.genre=='ambient' %}selected{% endif %}>Ambient</option>
+                <option value="electronic" {% if meta.genre=='electronic' %}selected{% endif %}>Électronique</option>
+                <option value="latino" {% if meta.genre=='latino' %}selected{% endif %}>Latino</option>
+                <option value="reggea" {% if meta.genre=='reggea' %}selected{% endif %}>Reggea</option>
+                <option value="voice" {% if meta.genre=='voice' %}selected{% endif %}>Voice</option>
+                <option value="simple_note" {% if meta.genre=='simple_note' %}selected{% endif %}>Simple Note</option>
+            </select>
+        </label><br />
+
+
+        <label>BPM (estimé automatiquement):
+            <input type="number" name="bpm" min="1" max="300" required value="{{ meta.bpm or '' }}" readonly />
+        </label><br />
+
+        <label>Score Rythmique:
+            <input type="number" name="score_rythme" min="0" max="100" required value="{{ meta.score_rythme or '' }}" />
+        </label><br />
+
+        <label>Score Musicalité:
+            <input type="number" name="score_musicalite" min="0" max="100" required
+                value="{{ meta.score_musicalite or '' }}" />
+        </label><br />
+
+        <label>Commentaire:<br />
+            <textarea name="commentaire" rows="2" cols="30">{{ meta.commentaire or '' }}</textarea>
+        </label><br />
+
+        <button type="submit">Sauvegarder & Suivant</button>
+    </form>
+</body>
+
+</html>

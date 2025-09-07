@@ -1,0 +1,7 @@
+Backend/monenv310/
+Backend/.env
+Frontend/node_modules/
+Training/.env
+Training/freesound-python/
+Training/app/audio/
+Training/app/audio_degraded/
