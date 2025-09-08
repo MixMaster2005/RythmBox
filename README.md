@@ -1,8 +1,17 @@
-# RythmBox
+# 🎵 RythmBox — Plateforme d’entraînement musical IA
 
-RythmBox est une plateforme d'entraînement musical basée sur l'IA, permettant d'analyser, télécharger et explorer des sons, avec une interface web moderne.
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
-## Structure du projet
+## 📝 Description
+
+RythmBox est une plateforme d’entraînement musical basée sur l’IA.  
+Elle permet d’analyser, télécharger et explorer des sons avec une interface web moderne.
+
+## 📂 Structure du projet
 
 ```
 RythmBox/
@@ -30,52 +39,45 @@ RythmBox/
 └── .gitignore
 ```
 
-## Installation
+- **Backend** : API Flask pour l’analyse et la gestion audio.
+- **Frontend** : Interface React + TailwindCSS moderne.
+- **Training** : Scripts Python pour l’entraînement et l’intégration Freesound.
+
+## 🚀 Installation
 
 ### Backend
 
-1. Aller dans `Backend/flask_app`
-2. Installer les dépendances Python :
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Lancer le serveur Flask :
-   ```sh
-   python app.py
-   ```
+```sh
+cd Backend/flask_app
+pip install -r requirements.txt
+python app.py
+```
 
 ### Frontend
 
-1. Aller dans `Frontend/melody-coach`
-2. Installer les dépendances Node.js :
-   ```sh
-   npm install
-   ```
-3. Lancer le serveur de développement :
-   ```sh
-   npm run dev
-   ```
+```sh
+cd Frontend/melody-coach
+npm install
+npm run dev
+```
 
 ### Training
 
-1. Aller dans `Training`
-2. Renseigner la clé API Freesound dans `.env` :
-   ```
-   FREESOUND_API_KEY=TA_CLE_API_ICI
-   ```
-3. Lancer le script de téléchargement :
-   ```sh
-   python python.py
-   ```
+```sh
+cd Training
+# Ajouter la clé API dans .env
+FREESOUND_API_KEY=TA_CLE_API_ICI
+python python.py
+```
 
-## Fonctionnalités
+## 🎯 Fonctionnalités
 
-- Téléchargement automatique de sons depuis Freesound (`Training/python.py`)
-- API Flask pour l'analyse et la gestion des fichiers audio (`Backend/flask_app/app.py`)
-- Interface web moderne avec Melody Coach (`Frontend/melody-coach`)
+- Téléchargement automatique de sons depuis Freesound.
+- API Flask pour l’analyse et la gestion audio.
+- Interface React + TailwindCSS moderne.
 
-## Dépendances principales
+## 📦 Dépendances principales
 
-- Flask, Flask-CORS
-- Freesound Python Client
-- Node.js, React, TailwindCSS (Frontend)
+- **Backend** : Flask, Flask-CORS, Freesound Client.
+- **Frontend** : Node.js, React, TailwindCSS.
+- **Training** : Python,
